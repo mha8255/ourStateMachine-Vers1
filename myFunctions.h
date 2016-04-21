@@ -2,7 +2,7 @@
 #ifndef MYFUNCTIONS_H_
 #define MYFUNCTIONS_H_
 
-void testactiongithub();
+
 void myAction00();
 void myAction01();
 void myAction02();
