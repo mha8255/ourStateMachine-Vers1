@@ -3,6 +3,11 @@
 #include "stateMachine.h"
 #include "keyboard.h"
 #include "myFunctions.h"
+#include "hw_functions/hwFunc.h"
+#include "hw_functions/disp.h"
+#include "hw_functions/FHV.h"
+#include <sysLib.h>
+#include <ioLib.h>
 
 int n, m;
 bool localMode;
@@ -80,7 +85,7 @@ SystemManager :: ~SystemManager() {
 void SystemManager :: keyPressed(){
 	printf(" A key has been pressed\n\r"); 
 	myStateMachine->sendEvent("keyPressed");
-	//storeKeyValue() Function for storing the key value which is pressed -> has to be implemented
+	storeKeyValue(); //Function for storing the key value which is pressed -> has to be implemented
 	return;
 }
 

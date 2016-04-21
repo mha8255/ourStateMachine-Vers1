@@ -29,7 +29,7 @@ public:
 	bool condition12();
 
 private:
-	
+	void storeKeyValue();
 };
 
 #endif // SYSTEMMANAGER_H_
