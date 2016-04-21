@@ -3,9 +3,9 @@
 #define MYFUNCTIONS_H_
 
 
-void myAction00();
-void myAction01();
-void myAction02();
+void noAction();
+void setLocalModeTrue();
+void keyPressed();
 
 void myAction10();
 void myAction11();
@@ -16,8 +16,8 @@ void myAction20();
 
 void myAction30();
 
-bool myCondition00();
-bool myCondition01();
+bool noNewKey();
+bool keyB();
 bool myCondition02();
 
 bool myCondition10();

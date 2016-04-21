@@ -5,6 +5,8 @@
 #include "myFunctions.h"
 
 int n, m;
+bool localMode;
+char newKeyVal;
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
 
@@ -14,8 +16,8 @@ SystemManager :: SystemManager() {
 	// MAXDIA = 9, MAXLINES = 66
 	// Should these be exceeded, please correct!
 
-	tab[0][0] = new TableEntry ("ChainModeIdle","ChainModeIdle","Timer0",2000,myAction00,myCondition00);
-	tab[0][1] = new TableEntry ("ChainModeIdle","LocalModeIdle","Timer0",2000,myAction01,myCondition01);
+	tab[0][0] = new TableEntry ("ChainModeIdle","ChainModeIdle","keyPressed",0,noAction,noNewKey);
+	tab[0][1] = new TableEntry ("ChainModeIdle","LocalModeIdle","keyPressed",0,setLocalModeTrue,keyB);
 	tab[0][2] = new TableEntry ("ChainModeIdle","TransferFromLeft","Trigg0",0,myAction02,myCondition02);
 	tab[0][3] = new TableEntry ("TransferFromLeft","MotorProfile","Trigg0",0,myAction02,myCondition02);
 	tab[0][4] = new TableEntry ("MotorProfile","MotorProfile","ProfileTimer",50,myAction02,myCondition02);
@@ -31,8 +33,8 @@ SystemManager :: SystemManager() {
 	tab[1][3] = new TableEntry ("MotorProfile","MotorProfile","ProfileTimer",50,myAction12,myCondition12);
 	tab[1][4] = new TableEntry ("MotorProfile","LocalModeIdle","ProfileTimer",50,myAction13,myCondition13);
 
-	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,myAction20,myCondition20);
-	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,myAction20,myCondition20);
+	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,keyPressed,myCondition20);
+	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,noAction,myCondition20);
 
 	// Initialize timer names for all diagrams
 	// Timer names are always Timer followed by the diagram number
@@ -75,21 +77,22 @@ SystemManager :: ~SystemManager() {
 	return;
 }
 
-void SystemManager :: action00(){
-	printf(" StateA -> Transition00 -> StateA\n\r"); 
-	n++;
+void SystemManager :: keyPressed(){
+	printf(" A key has been pressed\n\r"); 
+	myStateMachine->sendEvent("keyPressed");
+	//storeKeyValue() Function for storing the key value which is pressed -> has to be implemented
 	return;
 }
 
-void SystemManager :: action01(){
-	printf(" StateA -> Transition01 -> StateB\n\r"); 
-	myStateMachine->sendEvent("Trigg1");
+void SystemManager :: noAction(){
+	printf("ich bin faul\n\r"); 
+	//myStateMachine->sendEvent("Trigg1");
 	return;
 }
 
-void SystemManager :: action02(){
-	printf(" StateB -> Transition02 -> StateA\n\r"); 
-	n = 0;
+void SystemManager :: setLocalModeTrue(){
+	printf(" Transition to local Mode because of Key B pressed\n\r"); 
+	localMode = true;
 	return;
 }
 
@@ -125,15 +128,15 @@ bool SystemManager :: conditionTrue(){
 	return TRUE;
 }
 
-bool SystemManager :: condition00(){
-	if (n < 5) {
+bool SystemManager :: noNewKey(){
+	if (newKeyVal == false  ) {
 		return TRUE;
 	}
 	else return FALSE;
 }
 
-bool SystemManager :: condition01(){
-	if (n >= 5) return TRUE;
+bool SystemManager :: keyB(){
+	if (newKeyVal == "B") return TRUE;
 	else return FALSE;
 }
 

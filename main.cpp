@@ -29,18 +29,18 @@ int main (void) {
 	
 }
 
-void myAction00(){
-	mySystemManager->action00();
+void noAction(){
+	mySystemManager->noAction();
 	return;
 }
 
-void myAction01(){
-	mySystemManager->action01();
+void setLocalModeTrue(){
+	mySystemManager->setLocalModeTrue();
 	return;
 }
 
-void myAction02(){
-	mySystemManager->action02();
+void keyPressed(){
+	mySystemManager->keyPressed();
 	return;
 }
 
@@ -69,12 +69,12 @@ void myAction20(){
 	return;
 }
 
-bool myCondition00(){
-	return mySystemManager->condition00();
+bool noNewKey(){
+	return mySystemManager->noNewKey();
 }
 
-bool myCondition01(){
-	return mySystemManager->condition01();
+bool keyB(){
+	return mySystemManager->keyB();
 }
 
 bool myCondition02(){
