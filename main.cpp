@@ -30,7 +30,6 @@ int main (void) {
 }
 
 void noAction(){
-// Comment by me
 	mySystemManager->noAction();
 	return;
 }
