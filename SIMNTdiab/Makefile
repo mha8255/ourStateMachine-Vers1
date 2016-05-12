@@ -36,7 +36,7 @@ MODE_DIR := NonDebug
 endif
 OBJ_DIR := .
 WS_ROOT_DIR := C:/_HP
-PRJ_ROOT_DIR := $(WS_ROOT_DIR)/StateMachine\ -\ 2playwith
+PRJ_ROOT_DIR := $(WS_ROOT_DIR)/ourStateMachine-Vers1
 
 
 
@@ -85,154 +85,163 @@ endif
 
 
 #Project Targets
-PROJECT_TARGETS = StateMachine/$(MODE_DIR)/StateMachine.out \
-	 StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o
+PROJECT_TARGETS = ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1.out \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage.o
 
 
 #Rules
 
-# StateMachine
+# ourStateMachine-Vers1
 ifeq ($(DEBUG_MODE),1)
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
 else
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler =  -XO -Xsize-opt 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler =  -XO -Xsize-opt 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Linker =  -XO -Xsize-opt 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-StateMachine/$(MODE_DIR)/% : DEBUGFLAGS_Assembler =  -XO -Xsize-opt 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler =  -XO -Xsize-opt 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler =  -XO -Xsize-opt 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Linker =  -XO -Xsize-opt 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEBUGFLAGS_Assembler =  -XO -Xsize-opt 
 endif
-StateMachine/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
-StateMachine/$(MODE_DIR)/% : IDE_LIBRARIES = 
-StateMachine/$(MODE_DIR)/% : IDE_DEFINES = -DCPU=_VX_$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL -D_VSB_CONFIG_FILE=\"$(VSB_DIR)/h/config/vsbConfig.h\"   -DIP_PORT_VXWORKS=69 
-StateMachine/$(MODE_DIR)/% : PROJECT_TYPE = DKM
-StateMachine/$(MODE_DIR)/% : DEFINES = 
-StateMachine/$(MODE_DIR)/% : EXPAND_DBG = 0
-StateMachine/$(MODE_DIR)/% : VX_CPU_FAMILY = simpc
-StateMachine/$(MODE_DIR)/% : CPU = SIMNT
-StateMachine/$(MODE_DIR)/% : TOOL_FAMILY = diab
-StateMachine/$(MODE_DIR)/% : TOOL = diab
-StateMachine/$(MODE_DIR)/% : TOOL_PATH = 
-StateMachine/$(MODE_DIR)/% : CC_ARCH_SPEC = -tX86LH:vxworks69
-StateMachine/$(MODE_DIR)/% : VSB_DIR = $(WIND_BASE)/target/lib
-StateMachine/$(MODE_DIR)/% : VSB_CONFIG_FILE = $(VSB_DIR)/h/config/vsbConfig.h
-StateMachine/$(MODE_DIR)/% : LIBPATH = 
-StateMachine/$(MODE_DIR)/% : LIBS = 
-StateMachine/$(MODE_DIR)/% : OBJ_DIR := StateMachine/$(MODE_DIR)
+ourStateMachine-Vers1/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
+ourStateMachine-Vers1/$(MODE_DIR)/% : IDE_LIBRARIES = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : IDE_DEFINES = -DCPU=_VX_$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL -D_VSB_CONFIG_FILE=\"$(VSB_DIR)/h/config/vsbConfig.h\"   -DIP_PORT_VXWORKS=69 
+ourStateMachine-Vers1/$(MODE_DIR)/% : PROJECT_TYPE = DKM
+ourStateMachine-Vers1/$(MODE_DIR)/% : DEFINES = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : EXPAND_DBG = 0
+ourStateMachine-Vers1/$(MODE_DIR)/% : VX_CPU_FAMILY = simpc
+ourStateMachine-Vers1/$(MODE_DIR)/% : CPU = SIMNT
+ourStateMachine-Vers1/$(MODE_DIR)/% : TOOL_FAMILY = diab
+ourStateMachine-Vers1/$(MODE_DIR)/% : TOOL = diab
+ourStateMachine-Vers1/$(MODE_DIR)/% : TOOL_PATH = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : CC_ARCH_SPEC = -tX86LH:vxworks69
+ourStateMachine-Vers1/$(MODE_DIR)/% : VSB_DIR = $(WIND_BASE)/target/lib
+ourStateMachine-Vers1/$(MODE_DIR)/% : VSB_CONFIG_FILE = $(VSB_DIR)/h/config/vsbConfig.h
+ourStateMachine-Vers1/$(MODE_DIR)/% : LIBPATH = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : LIBS = 
+ourStateMachine-Vers1/$(MODE_DIR)/% : OBJ_DIR := ourStateMachine-Vers1/$(MODE_DIR)
 
-OBJECTS_StateMachine = $(WS_ROOT_DIR)/StateMachine/SIMNTdiab/StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o
+OBJECTS_ourStateMachine-Vers1 = ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage.o
 
 ifeq ($(TARGET_JOBS),1)
-StateMachine/$(MODE_DIR)/StateMachine.out : $(OBJECTS_StateMachine)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";ddump -Ng $(OBJECTS_StateMachine) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c pentium -tags $(VSB_DIR)/tags/simpc/SIMNT/common/dkm.tags > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)dcc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -Xdollar-in-ident -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations  $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES)  $(IDE_DEFINES) $(DEFINES) -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)dld -tX86LH:vxworks69 -X -r5 -f 0x90,1,1 -r4 -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_StateMachine) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
+ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1.out : $(OBJECTS_ourStateMachine-Vers1)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";ddump -Ng $(OBJECTS_ourStateMachine-Vers1) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c pentium -tags $(VSB_DIR)/tags/simpc/SIMNT/common/dkm.tags > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)dcc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -Xdollar-in-ident -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations  $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES)  $(IDE_DEFINES) $(DEFINES) -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)dld -tX86LH:vxworks69 -X -r5 -f 0x90,1,1 -r4 -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_ourStateMachine-Vers1) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
 
 else
-StateMachine/$(MODE_DIR)/StateMachine.out : StateMachine/$(MODE_DIR)/StateMachine.out_jobs
+ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1.out : ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1.out_jobs
 
 endif
-StateMachine/$(MODE_DIR)/StateMachine_compile_file : $(FILE) ;
+ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1_compile_file : $(FILE) ;
 
-_clean :: StateMachine/$(MODE_DIR)/StateMachine_clean
+_clean :: ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1_clean
 
-StateMachine/$(MODE_DIR)/StateMachine_clean : 
-	$(TRACE_FLAG)if [ -d "StateMachine" ]; then cd "StateMachine"; rm -rf $(MODE_DIR); fi
+ourStateMachine-Vers1/$(MODE_DIR)/ourStateMachine-Vers1_clean : 
+	$(TRACE_FLAG)if [ -d "ourStateMachine-Vers1" ]; then cd "ourStateMachine-Vers1"; rm -rf $(MODE_DIR); fi
 
 
-# StateMachine_partialImage
+# ourStateMachine-Vers1_partialImage
 ifeq ($(DEBUG_MODE),1)
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler = -g
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler = -g
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker = -g
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler = -g
 else
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler =  -XO -Xsize-opt 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler =  -XO -Xsize-opt 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker =  -XO -Xsize-opt 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
-StateMachine_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler =  -XO -Xsize-opt 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C-Compiler =  -XO -Xsize-opt 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_C++-Compiler =  -XO -Xsize-opt 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Linker =  -XO -Xsize-opt 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Partial-Image-Linker = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Librarian = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEBUGFLAGS_Assembler =  -XO -Xsize-opt 
 endif
-StateMachine_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
-StateMachine_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = 
-StateMachine_partialImage/$(MODE_DIR)/% : IDE_DEFINES = -DCPU=_VX_$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL -D_VSB_CONFIG_FILE=\"$(VSB_DIR)/h/config/vsbConfig.h\"   -DIP_PORT_VXWORKS=69 
-StateMachine_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
-StateMachine_partialImage/$(MODE_DIR)/% : DEFINES = 
-StateMachine_partialImage/$(MODE_DIR)/% : EXPAND_DBG = 0
-StateMachine_partialImage/$(MODE_DIR)/% : VX_CPU_FAMILY = simpc
-StateMachine_partialImage/$(MODE_DIR)/% : CPU = SIMNT
-StateMachine_partialImage/$(MODE_DIR)/% : TOOL_FAMILY = diab
-StateMachine_partialImage/$(MODE_DIR)/% : TOOL = diab
-StateMachine_partialImage/$(MODE_DIR)/% : TOOL_PATH = 
-StateMachine_partialImage/$(MODE_DIR)/% : CC_ARCH_SPEC = -tX86LH:vxworks69
-StateMachine_partialImage/$(MODE_DIR)/% : VSB_DIR = $(WIND_BASE)/target/lib
-StateMachine_partialImage/$(MODE_DIR)/% : VSB_CONFIG_FILE = $(VSB_DIR)/h/config/vsbConfig.h
-StateMachine_partialImage/$(MODE_DIR)/% : LIBPATH = 
-StateMachine_partialImage/$(MODE_DIR)/% : LIBS = 
-StateMachine_partialImage/$(MODE_DIR)/% : OBJ_DIR := StateMachine_partialImage/$(MODE_DIR)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : IDE_LIBRARIES = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : IDE_DEFINES = -DCPU=_VX_$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL -D_VSB_CONFIG_FILE=\"$(VSB_DIR)/h/config/vsbConfig.h\"   -DIP_PORT_VXWORKS=69 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : PROJECT_TYPE = DKM
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : DEFINES = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : EXPAND_DBG = 0
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : VX_CPU_FAMILY = simpc
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : CPU = SIMNT
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : TOOL_FAMILY = diab
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : TOOL = diab
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : TOOL_PATH = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : CC_ARCH_SPEC = -tX86LH:vxworks69
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : VSB_DIR = $(WIND_BASE)/target/lib
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : VSB_CONFIG_FILE = $(VSB_DIR)/h/config/vsbConfig.h
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : LIBPATH = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : LIBS = 
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/% : OBJ_DIR := ourStateMachine-Vers1_partialImage/$(MODE_DIR)
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/diaTimer.o : $(WS_ROOT_DIR)/StateMachine/diaTimer.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/diaTimer.o : $(PRJ_ROOT_DIR)/diaTimer.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/keyboard.o : $(WS_ROOT_DIR)/StateMachine/keyboard.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/disp.o : $(PRJ_ROOT_DIR)/hw_functions/disp.c $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -Xc-new -Xdialect-c89  -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
+
+
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/hwFunc.o : $(PRJ_ROOT_DIR)/hw_functions/hwFunc.c $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -Xc-new -Xdialect-c89  -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
+
+
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/kbd.o : $(PRJ_ROOT_DIR)/hw_functions/kbd.c $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -Xc-new -Xdialect-c89  -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
+
+
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/keyboard.o : $(PRJ_ROOT_DIR)/keyboard.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/main.o : $(WS_ROOT_DIR)/StateMachine/main.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/main.o : $(PRJ_ROOT_DIR)/main.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/setMyIP.o : $(WS_ROOT_DIR)/StateMachine/setMyIP.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/setMyIP.o : $(PRJ_ROOT_DIR)/setMyIP.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateMachine.o : $(WS_ROOT_DIR)/StateMachine/stateMachine.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateMachine.o : $(PRJ_ROOT_DIR)/stateMachine.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateTable.o : $(WS_ROOT_DIR)/StateMachine/stateTable.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateTable.o : $(PRJ_ROOT_DIR)/stateTable.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/systemManager.o : $(WS_ROOT_DIR)/StateMachine/systemManager.cpp $(FORCE_FILE_BUILD)
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/systemManager.o : $(PRJ_ROOT_DIR)/systemManager.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dcc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -W:c:,-Xclib-optim-off -Xansi -Xlocal-data-area-static-only  -W:c++:.CPP -ei1518,4177,4223,4301,4550,5409,1606 -ei4193,4826,4381,4237,1573,4007,4082,4177,4223,4260,4550,5361,5828,2273,5387,5388 -ei1522,4092,4111,4152,4167,4171,4174,4186,4188,4191,4192,4223,4231,4236,4284,4375,4494,4513,5152,5457 -Xforce-declarations   -Xmake-dependency=0xd $(IDE_DEFINES) $(DEFINES) $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -o "$@" -c "$<"
 
 
-OBJECTS_StateMachine_partialImage = StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/diaTimer.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/keyboard.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/main.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/setMyIP.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateMachine.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateTable.o \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/systemManager.o
+OBJECTS_ourStateMachine-Vers1_partialImage = ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/diaTimer.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/disp.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/hwFunc.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/kbd.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/keyboard.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/main.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/setMyIP.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateMachine.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateTable.o \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/systemManager.o
 
 ifeq ($(TARGET_JOBS),1)
-StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o : $(OBJECTS_StateMachine_partialImage)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dld -tX86LH:vxworks69 -X -r5 -f 0x90,1,1  -o "$@" $(OBJECTS_StateMachine_partialImage) $(ADDED_OBJECTS) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage.o : $(OBJECTS_ourStateMachine-Vers1_partialImage)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)dld -tX86LH:vxworks69 -X -r5 -f 0x90,1,1  -o "$@" $(OBJECTS_ourStateMachine-Vers1_partialImage) $(ADDED_OBJECTS) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
 
 else
-StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o : StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o_jobs
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage.o : ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage.o_jobs
 
 endif
-StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage_compile_file : $(FILE) ;
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage_compile_file : $(FILE) ;
 
-_clean :: StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage_clean
+_clean :: ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage_clean
 
-StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage_clean : 
-	$(TRACE_FLAG)if [ -d "StateMachine_partialImage" ]; then cd "StateMachine_partialImage"; rm -rf $(MODE_DIR); fi
-
-$(WS_ROOT_DIR)/StateMachine/SIMNTdiab/StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o : force_referenced_rebuilds_StateMachine ;
-
-force_referenced_rebuilds_StateMachine : 
-	$(TRACE_FLAG)+cd $(WS_ROOT_DIR)/StateMachine/SIMNTdiab;\
-	make --no-print-directory BUILD_SPEC=SIMNTdiab DEBUG_MODE=1 StateMachine_partialImage/$(MODE_DIR)/StateMachine_partialImage.o
+ourStateMachine-Vers1_partialImage/$(MODE_DIR)/ourStateMachine-Vers1_partialImage_clean : 
+	$(TRACE_FLAG)if [ -d "ourStateMachine-Vers1_partialImage" ]; then cd "ourStateMachine-Vers1_partialImage"; rm -rf $(MODE_DIR); fi
 
 force : 
 
@@ -240,9 +249,10 @@ TARGET_JOBS_RULE?=echo "Update the makefile template via File > Import > Build S
 %_jobs : 
 	$(TRACE_FLAG)$(TARGET_JOBS_RULE)
 
-DEP_FILES := StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/diaTimer.d StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/keyboard.d StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/main.d \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/setMyIP.d StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateMachine.d StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/stateTable.d \
-	 StateMachine_partialImage/$(MODE_DIR)/Objects/StateMachine/systemManager.d
+DEP_FILES := ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/diaTimer.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/disp.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/hwFunc.d \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/hw_functions/kbd.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/keyboard.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/main.d \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/setMyIP.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateMachine.d ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/stateTable.d \
+	 ourStateMachine-Vers1_partialImage/$(MODE_DIR)/Objects/ourStateMachine-Vers1/systemManager.d
 -include $(DEP_FILES)
 
 

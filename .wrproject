@@ -3024,14 +3024,14 @@
         </mapAttribute>
     </attributes>
     <buildtargets>
-        <buildtarget buildtool="Linker" name="StateMachine" passed="false" targetname="StateMachine">
+        <buildtarget buildtool="Linker" name="ourStateMachine-Vers1" passed="false" targetname="ourStateMachine-Vers1">
             <contents>
-                <buildtargetreference name="/StateMachine/StateMachine_partialImage"/>
+                <buildtargetreference name="/ourStateMachine-Vers1/ourStateMachine-Vers1_partialImage"/>
             </contents>
         </buildtarget>
-        <buildtarget buildtool="Partial Image Linker" name="StateMachine_partialImage" passed="true" targetname="StateMachine_partialImage">
+        <buildtarget buildtool="Partial Image Linker" name="ourStateMachine-Vers1_partialImage" passed="true" targetname="ourStateMachine-Vers1_partialImage">
             <contents>
-                <folder name="/StateMachine" recursive="true"/>
+                <folder name="/ourStateMachine-Vers1" recursive="true"/>
             </contents>
         </buildtarget>
     </buildtargets>

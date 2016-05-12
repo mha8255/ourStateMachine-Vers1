@@ -25,6 +25,7 @@ public:
 	bool conditionTrue();
 	bool noNewKey();
 	bool keyB();
+	bool noRelevantKey();
 	bool condition11();
 	bool condition12();
 

@@ -1,8 +1,6 @@
-StateMachine_partialImage/Debug/Objects/StateMachine/main.o: \
-  C:/_HP/StateMachine/main.cpp \
-  C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h \
-  C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h \
-  C:/Windriver/vxworks-6.9/target/h/taskLib.h \
+ourStateMachine-Vers1_partialImage/Debug/Objects/ourStateMachine-Vers1/hw_functions/disp.o: \
+  C:/_HP/ourStateMachine-Vers1/hw_functions/disp.c \
+  C:/Windriver/vxworks-6.9/target/h/intLib.h \
   C:/Windriver/vxworks-6.9/target/h/vxWorks.h \
   C:/Windriver/vxworks-6.9/target/h/vxWorksCommon.h \
   C:/Windriver/vxworks-6.9/target/h/types/vxCpu.h \
@@ -15,6 +13,7 @@ StateMachine_partialImage/Debug/Objects/StateMachine/main.o: \
   C:/Windriver/vxworks-6.9/target/h/types/vxParams.h \
   C:/Windriver/vxworks-6.9/target/h/types/vxTypesBase.h \
   C:/Windriver/diab/5.9.1.0/include/diab/stddef.h \
+  C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h \
   C:/Windriver/vxworks-6.9/target/h/types/vxTypes.h \
   C:/Windriver/vxworks-6.9/target/h/types/vxANSI.h \
   C:/Windriver/vxworks-6.9/target/h/stdint.h \
@@ -51,9 +50,12 @@ StateMachine_partialImage/Debug/Objects/StateMachine/main.o: \
   C:/Windriver/vxworks-6.9/target/h/tool/common/private/toolMacrosP.h \
   C:/Windriver/vxworks-6.9/target/h/version.h \
   C:/Windriver/vxworks-6.9/target/h/vwModNum.h \
-  C:/Windriver/vxworks-6.9/target/h/classLib.h \
   C:/Windriver/vxworks-6.9/target/h/regs.h \
   C:/Windriver/vxworks-6.9/target/h/arch/simnt/regsSimnt.h \
+  C:/Windriver/vxworks-6.9/target/h/vxInline.h \
+  C:/Windriver/vxworks-6.9/target/h/arch/simnt/vxInlineArch.h \
+  C:/Windriver/vxworks-6.9/target/h/taskLib.h \
+  C:/Windriver/vxworks-6.9/target/h/classLib.h \
   C:/Windriver/vxworks-6.9/target/h/excLib.h \
   C:/Windriver/vxworks-6.9/target/h/arch/simnt/excSimntLib.h \
   C:/Windriver/vxworks-6.9/target/h/private/qLibP.h \
@@ -69,8 +71,6 @@ StateMachine_partialImage/Debug/Objects/StateMachine/main.o: \
   C:/Windriver/vxworks-6.9/target/h/errno.h \
   C:/Windriver/vxworks-6.9/target/h/private/handleLibP.h \
   C:/Windriver/vxworks-6.9/target/h/private/intMicroLibP.h \
-  C:/Windriver/vxworks-6.9/target/h/vxInline.h \
-  C:/Windriver/vxworks-6.9/target/h/arch/simnt/vxInlineArch.h \
   C:/Windriver/vxworks-6.9/target/h/private/classLibP.h \
   C:/Windriver/vxworks-6.9/target/h/semLib.h \
   C:/Windriver/vxworks-6.9/target/h/semLibCommon.h \
@@ -99,73 +99,16 @@ StateMachine_partialImage/Debug/Objects/StateMachine/main.o: \
   C:/Windriver/vxworks-6.9/target/h/vxCpuLib.h \
   C:/Windriver/vxworks-6.9/target/h/logLib.h \
   C:/Windriver/vxworks-6.9/target/h/stdio.h \
-  C:/Windriver/vxworks-6.9/target/h/intLib.h \
+  C:/Windriver/vxworks-6.9/target/h/string.h \
   C:/Windriver/vxworks-6.9/target/h/sysLib.h \
   C:/Windriver/vxworks-6.9/target/h/bootLib.h \
   C:/Windriver/vxworks-6.9/target/h/ttyLib.h \
   C:/Windriver/vxworks-6.9/target/h/sioLib.h \
   C:/Windriver/vxworks-6.9/target/h/sioLibCommon.h \
   C:/Windriver/vxworks-6.9/target/h/drv/timer/timerDev.h \
-  C:/_HP/StateMachine/ifLib.h \
-  C:/Windriver/vxworks-6.9/target/h/wrn/coreip/netVersion.h \
-  C:/_HP/StateMachine/systemManager.h \
-  C:/_HP/StateMachine/stateMachine.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/queue \
-  C:/Windriver/diab/5.9.1.0/include/cpp/algorithm \
-  C:/Windriver/diab/5.9.1.0/include/cpp/memory \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xmemory \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cstdlib \
-  C:/Windriver/diab/5.9.1.0/include/cpp/yvals.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/new \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/exception \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xstddef \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cstddef \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xutility \
-  C:/Windriver/diab/5.9.1.0/include/cpp/climits \
-  C:/Windriver/vxworks-6.9/target/h/limits.h \
-  C:/Windriver/vxworks-6.9/target/h/tool/diab/limits.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/utility \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/iosfwd \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cstdio \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cstring \
-  C:/Windriver/vxworks-6.9/target/h/string.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cwchar \
-  C:/Windriver/diab/5.9.1.0/include/diab/wchar.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/deque \
-  C:/Windriver/diab/5.9.1.0/include/cpp/stdexcept \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/xstring \
-  C:/Windriver/diab/5.9.1.0/include/cpp/functional \
-  C:/Windriver/diab/5.9.1.0/include/cpp/vector \
-  C:/_HP/StateMachine/diaTimer.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/string \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/istream \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/ostream \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/ios \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/xlocnum \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cmath \
-  C:/Windriver/vxworks-6.9/target/h/math.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/streambuf \
-  C:/Windriver/diab/5.9.1.0/include/cpp/std/xiosbase \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xlocale \
-  C:/Windriver/diab/5.9.1.0/include/cpp/typeinfo \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xdebug \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo \
-  C:/Windriver/diab/5.9.1.0/include/cpp/cctype \
-  C:/Windriver/vxworks-6.9/target/h/ctype.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/clocale \
-  C:/Windriver/vxworks-6.9/target/h/locale.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/ctime \
-  C:/Windriver/vxworks-6.9/target/h/time.h \
-  C:/Windriver/vxworks-6.9/target/h/base/b_struct_timespec.h \
-  C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo.h \
-  C:/Windriver/vxworks-6.9/target/h/wdLib.h \
-  C:/_HP/StateMachine/stateTable.h
+  C:/_HP/ourStateMachine-Vers1/hw_functions/disp.h
 
-C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h:
-
-C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h:
-
-C:/Windriver/vxworks-6.9/target/h/taskLib.h:
+C:/Windriver/vxworks-6.9/target/h/intLib.h:
 
 C:/Windriver/vxworks-6.9/target/h/vxWorks.h:
 
@@ -190,6 +133,8 @@ C:/Windriver/vxworks-6.9/target/h/types/vxParams.h:
 C:/Windriver/vxworks-6.9/target/h/types/vxTypesBase.h:
 
 C:/Windriver/diab/5.9.1.0/include/diab/stddef.h:
+
+C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h:
 
 C:/Windriver/vxworks-6.9/target/h/types/vxTypes.h:
 
@@ -263,11 +208,17 @@ C:/Windriver/vxworks-6.9/target/h/version.h:
 
 C:/Windriver/vxworks-6.9/target/h/vwModNum.h:
 
-C:/Windriver/vxworks-6.9/target/h/classLib.h:
-
 C:/Windriver/vxworks-6.9/target/h/regs.h:
 
 C:/Windriver/vxworks-6.9/target/h/arch/simnt/regsSimnt.h:
+
+C:/Windriver/vxworks-6.9/target/h/vxInline.h:
+
+C:/Windriver/vxworks-6.9/target/h/arch/simnt/vxInlineArch.h:
+
+C:/Windriver/vxworks-6.9/target/h/taskLib.h:
+
+C:/Windriver/vxworks-6.9/target/h/classLib.h:
 
 C:/Windriver/vxworks-6.9/target/h/excLib.h:
 
@@ -298,10 +249,6 @@ C:/Windriver/vxworks-6.9/target/h/errno.h:
 C:/Windriver/vxworks-6.9/target/h/private/handleLibP.h:
 
 C:/Windriver/vxworks-6.9/target/h/private/intMicroLibP.h:
-
-C:/Windriver/vxworks-6.9/target/h/vxInline.h:
-
-C:/Windriver/vxworks-6.9/target/h/arch/simnt/vxInlineArch.h:
 
 C:/Windriver/vxworks-6.9/target/h/private/classLibP.h:
 
@@ -359,7 +306,7 @@ C:/Windriver/vxworks-6.9/target/h/logLib.h:
 
 C:/Windriver/vxworks-6.9/target/h/stdio.h:
 
-C:/Windriver/vxworks-6.9/target/h/intLib.h:
+C:/Windriver/vxworks-6.9/target/h/string.h:
 
 C:/Windriver/vxworks-6.9/target/h/sysLib.h:
 
@@ -373,111 +320,5 @@ C:/Windriver/vxworks-6.9/target/h/sioLibCommon.h:
 
 C:/Windriver/vxworks-6.9/target/h/drv/timer/timerDev.h:
 
-C:/_HP/StateMachine/ifLib.h:
-
-C:/Windriver/vxworks-6.9/target/h/wrn/coreip/netVersion.h:
-
-C:/_HP/StateMachine/systemManager.h:
-
-C:/_HP/StateMachine/stateMachine.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/queue:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/algorithm:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/memory:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xmemory:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cstdlib:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/yvals.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/new:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/exception:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xstddef:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cstddef:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xutility:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/climits:
-
-C:/Windriver/vxworks-6.9/target/h/limits.h:
-
-C:/Windriver/vxworks-6.9/target/h/tool/diab/limits.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/utility:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/iosfwd:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cstdio:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cstring:
-
-C:/Windriver/vxworks-6.9/target/h/string.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cwchar:
-
-C:/Windriver/diab/5.9.1.0/include/diab/wchar.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/deque:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/stdexcept:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/xstring:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/functional:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/vector:
-
-C:/_HP/StateMachine/diaTimer.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/string:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/istream:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/ostream:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/ios:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/xlocnum:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cmath:
-
-C:/Windriver/vxworks-6.9/target/h/math.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/streambuf:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/std/xiosbase:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xlocale:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/typeinfo:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xdebug:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/cctype:
-
-C:/Windriver/vxworks-6.9/target/h/ctype.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/clocale:
-
-C:/Windriver/vxworks-6.9/target/h/locale.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/ctime:
-
-C:/Windriver/vxworks-6.9/target/h/time.h:
-
-C:/Windriver/vxworks-6.9/target/h/base/b_struct_timespec.h:
-
-C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo.h:
-
-C:/Windriver/vxworks-6.9/target/h/wdLib.h:
-
-C:/_HP/StateMachine/stateTable.h:
+C:/_HP/ourStateMachine-Vers1/hw_functions/disp.h:
 

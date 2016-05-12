@@ -77,6 +77,11 @@ bool keyB(){
 	return mySystemManager->keyB();
 }
 
+bool noRelevantKey(){
+	return mySystemManager->noRelevantKey();
+}
+
+
 bool myCondition02(){
 	return mySystemManager->conditionTrue();
 }

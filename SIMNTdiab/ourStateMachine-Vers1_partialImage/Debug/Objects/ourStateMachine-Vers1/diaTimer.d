@@ -1,8 +1,8 @@
-StateMachine_partialImage/Debug/Objects/StateMachine/stateMachine.o: \
-  C:/_HP/StateMachine/stateMachine.cpp \
+ourStateMachine-Vers1_partialImage/Debug/Objects/ourStateMachine-Vers1/diaTimer.o: \
+  C:/_HP/ourStateMachine-Vers1/diaTimer.cpp \
   C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h \
   C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h \
-  C:/_HP/StateMachine/stateMachine.h \
+  C:/_HP/ourStateMachine-Vers1/stateMachine.h \
   C:/Windriver/diab/5.9.1.0/include/cpp/queue \
   C:/Windriver/diab/5.9.1.0/include/cpp/algorithm \
   C:/Windriver/diab/5.9.1.0/include/cpp/memory \
@@ -87,7 +87,7 @@ StateMachine_partialImage/Debug/Objects/StateMachine/stateMachine.o: \
   C:/Windriver/vxworks-6.9/target/h/semLibCommon.h \
   C:/Windriver/vxworks-6.9/target/h/objLib.h \
   C:/Windriver/vxworks-6.9/target/h/objLibCommon.h \
-  C:/_HP/StateMachine/diaTimer.h \
+  C:/_HP/ourStateMachine-Vers1/diaTimer.h \
   C:/Windriver/diab/5.9.1.0/include/cpp/std/string \
   C:/Windriver/diab/5.9.1.0/include/cpp/std/istream \
   C:/Windriver/diab/5.9.1.0/include/cpp/std/ostream \
@@ -110,13 +110,19 @@ StateMachine_partialImage/Debug/Objects/StateMachine/stateMachine.o: \
   C:/Windriver/vxworks-6.9/target/h/base/b_struct_timespec.h \
   C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo.h \
   C:/Windriver/vxworks-6.9/target/h/wdLib.h \
-  C:/_HP/StateMachine/stateTable.h
+  C:/_HP/ourStateMachine-Vers1/stateTable.h \
+  C:/Windriver/vxworks-6.9/target/h/sysLib.h \
+  C:/Windriver/vxworks-6.9/target/h/bootLib.h \
+  C:/Windriver/vxworks-6.9/target/h/ttyLib.h \
+  C:/Windriver/vxworks-6.9/target/h/sioLib.h \
+  C:/Windriver/vxworks-6.9/target/h/sioLibCommon.h \
+  C:/Windriver/vxworks-6.9/target/h/drv/timer/timerDev.h
 
 C:/Windriver/diab/5.9.1.0/include/diab/lpragma.h:
 
 C:/Windriver/diab/5.9.1.0/include/diab/xmacros.h:
 
-C:/_HP/StateMachine/stateMachine.h:
+C:/_HP/ourStateMachine-Vers1/stateMachine.h:
 
 C:/Windriver/diab/5.9.1.0/include/cpp/queue:
 
@@ -286,7 +292,7 @@ C:/Windriver/vxworks-6.9/target/h/objLib.h:
 
 C:/Windriver/vxworks-6.9/target/h/objLibCommon.h:
 
-C:/_HP/StateMachine/diaTimer.h:
+C:/_HP/ourStateMachine-Vers1/diaTimer.h:
 
 C:/Windriver/diab/5.9.1.0/include/cpp/std/string:
 
@@ -332,5 +338,17 @@ C:/Windriver/diab/5.9.1.0/include/cpp/xlocinfo.h:
 
 C:/Windriver/vxworks-6.9/target/h/wdLib.h:
 
-C:/_HP/StateMachine/stateTable.h:
+C:/_HP/ourStateMachine-Vers1/stateTable.h:
+
+C:/Windriver/vxworks-6.9/target/h/sysLib.h:
+
+C:/Windriver/vxworks-6.9/target/h/bootLib.h:
+
+C:/Windriver/vxworks-6.9/target/h/ttyLib.h:
+
+C:/Windriver/vxworks-6.9/target/h/sioLib.h:
+
+C:/Windriver/vxworks-6.9/target/h/sioLibCommon.h:
+
+C:/Windriver/vxworks-6.9/target/h/drv/timer/timerDev.h:
 

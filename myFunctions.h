@@ -18,6 +18,8 @@ void myAction30();
 
 bool noNewKey();
 bool keyB();
+bool noRelevantKey();
+
 bool myCondition02();
 
 bool myCondition10();
