@@ -13,7 +13,6 @@ extern "C" {
 int n, m;
 bool localMode;
 char keyVal;
-char newKeyVal;
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
 
@@ -91,12 +90,11 @@ SystemManager :: ~SystemManager() {
 
 void SystemManager :: myEvaluateKeyboard(){
 	// read Keyboard; if Keyboard value is other than before make the following bzw generell gedrückt:
-	char newKeyVal = getKey();
-	if (newKeyVal == 0x0) {
+	char keyVal = getKey();
+	if (keyVal == 0x0) {
 		//do nuttin
 	}
 	else{
-		keyVal = newKeyVal;
 		printf(" A key has been pressed: %c \n\r", keyVal);
 		myStateMachine->sendEvent("keyPressed");
 	}
