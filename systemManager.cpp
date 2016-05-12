@@ -21,9 +21,9 @@ SystemManager :: SystemManager() {
 	// MAXDIA = 9, MAXLINES = 66
 	// Should these be exceeded, please correct!
 
-	tab[0][0] = new TableEntry ("ChainModeIdle","ChainModeIdle","keyPressed",0,noAction,noNewKey);
+	tab[0][0] = new TableEntry ("ChainModeIdle","ChainModeIdle","keyPressed",0,noAction,noRelevantKey);
 	tab[0][1] = new TableEntry ("ChainModeIdle","LocalModeIdle","keyPressed",0,setLocalModeTrue,keyB);
-	tab[0][2] = new TableEntry ("ChainModeIdle","TransferFromLeft","Trigg0",0,myAction02,myCondition02);
+	tab[0][2] = new TableEntry ("ChainModeIdle","TransferFromLeft","keyPressed",0,startTransfer,keyA);
 	tab[0][3] = new TableEntry ("TransferFromLeft","MotorProfile","Trigg0",0,myAction02,myCondition02);
 	tab[0][4] = new TableEntry ("MotorProfile","MotorProfile","ProfileTimer",50,myAction02,myCondition02);
 	tab[0][5] = new TableEntry ("MotorProfile","WaitForIt","ProfileTimer",50,myAction02,myCondition02);
@@ -38,7 +38,7 @@ SystemManager :: SystemManager() {
 	tab[1][3] = new TableEntry ("MotorProfile","MotorProfile","ProfileTimer",50,myAction12,myCondition12);
 	tab[1][4] = new TableEntry ("MotorProfile","LocalModeIdle","ProfileTimer",50,myAction13,myCondition13);
 
-	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,keyPressed,myCondition20);
+	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,evaluateKeyboard,conditionTrue);
 	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,noAction,myCondition20);
 
 	// Initialize timer names for all diagrams
@@ -82,10 +82,15 @@ SystemManager :: ~SystemManager() {
 	return;
 }
 
-void SystemManager :: keyPressed(){
-	printf(" A key has been pressed\n\r"); 
-	myStateMachine->sendEvent("keyPressed");
-	storeKeyValue(); //Function for storing the key value which is pressed -> has to be implemented
+void SystemManager :: evaluateKeyboard(){
+	// read Keyboard; if Keyboard value is other than before make the following bzw generell gedrückt:
+	char keyVal = getKey(void);
+	if (keyVal == 0x0) {
+			break;
+	}
+	else
+		printf(" A key has been pressed\n\r");
+		myStateMachine->sendEvent("keyPressed");
 	return;
 }
 
@@ -133,20 +138,32 @@ bool SystemManager :: conditionTrue(){
 	return TRUE;
 }
 
-bool SystemManager :: noNewKey(){
-	if (newKeyVal == false  ) {
+bool SystemManager :: noRelevantKey(){
+	if (keyVal =! ("B" || "A") ) {
+		printf("nicht zulässige Eingabe\n\r");
 		return TRUE;
 	}
 	else return FALSE;
 }
 
 bool SystemManager :: keyB(){
-	if (newKeyVal == "B") return TRUE;
+	if (keyVal == "B") { 
+		newKeyVal = false;
+		return TRUE;
+	}
 	else return FALSE;
 }
 
-bool SystemManager :: condition11(){
-	if (m < 4) return TRUE;
+bool SystemManager :: keyA(){
+	if (keyVal == "A") { 
+		newKeyVal = false;
+		return TRUE;
+	}
+	else return FALSE;
+}
+
+bool SystemManager :: requestTrue(){
+	if (new) return TRUE;
 	else return FALSE;
 }
 
