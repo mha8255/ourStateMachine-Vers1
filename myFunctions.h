@@ -2,11 +2,14 @@
 #ifndef MYFUNCTIONS_H_
 #define MYFUNCTIONS_H_
 
-
+//actions:
 void noAction();
 void setLocalModeTrue();
 void keyPressed();
+void startTransfer();
+void evaluateKeyboard();
 
+void myAction02();
 void myAction10();
 void myAction11();
 void myAction12();
@@ -16,9 +19,11 @@ void myAction20();
 
 void myAction30();
 
-bool noNewKey();
+//conditions:
 bool keyB();
 bool noRelevantKey();
+bool keyA();
+bool conditionTrue();
 
 bool myCondition02();
 

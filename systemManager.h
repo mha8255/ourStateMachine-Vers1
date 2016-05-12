@@ -14,23 +14,32 @@ class SystemManager {
 public:
 	SystemManager();
 	~SystemManager();
-	void noAction();
-	void setLocalModeTrue();
-	void keyPressed();
+	//actions:
+	void myNoAction();
+	void mySetLocalModeTrue();
+	void myKeyPressed();
+	void myStartTransfer();
+	void myEvaluateKeyboard();
+	
+	void action02();
 	void action10();
 	void action11();
 	void action12();
 	void action13();
 	void action20();
-	bool conditionTrue();
-	bool noNewKey();
-	bool keyB();
-	bool noRelevantKey();
+	
+	//conditions:
+	bool myConditionTrue();
+	bool myKeyB();
+	bool myKeyA();
+	bool myNoRelevantKey();
+	
+	bool oldConditionTrue();
 	bool condition11();
 	bool condition12();
 
 private:
-	void storeKeyValue();
+	void myStoreKeyValue();
 };
 
 #endif // SYSTEMMANAGER_H_

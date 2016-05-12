@@ -14,6 +14,7 @@ StateMachine * myStateMachine;
 void setLocalIp();
 
 int main (void) {
+	
 
 	// Set tick to 5 ms. This is the time resolution!
 	sysClkRateSet(200);
@@ -29,20 +30,36 @@ int main (void) {
 	
 }
 
+//actions:
+
 void noAction(){
-	mySystemManager->noAction();
+	mySystemManager->myNoAction();
 	return;
 }
 
 void setLocalModeTrue(){
-	mySystemManager->setLocalModeTrue();
+	mySystemManager->mySetLocalModeTrue();
 	return;
 }
 
-void keyPressed(){
-	mySystemManager->keyPressed();
+
+void startTransfer(){
+	mySystemManager->myStartTransfer();
 	return;
 }
+
+void evaluateKeyboard(){
+	mySystemManager->myEvaluateKeyboard();
+	return;
+}
+
+
+
+void myAction02(){
+	mySystemManager->action02();
+	return;
+}
+
 
 void myAction10(){
 	mySystemManager->action10();
@@ -69,25 +86,34 @@ void myAction20(){
 	return;
 }
 
-bool noNewKey(){
-	return mySystemManager->noNewKey();
-}
+
+//conditions:
 
 bool keyB(){
-	return mySystemManager->keyB();
+	return mySystemManager->myKeyB();
 }
 
 bool noRelevantKey(){
-	return mySystemManager->noRelevantKey();
+	return mySystemManager->myNoRelevantKey();
 }
+
+bool keyA(){
+	return mySystemManager->myKeyA();
+}
+
+bool conditionTrue(){
+	return mySystemManager->myConditionTrue();
+}
+
+
 
 
 bool myCondition02(){
-	return mySystemManager->conditionTrue();
+	return mySystemManager->oldConditionTrue();
 }
 
 bool myCondition10(){
-	return mySystemManager->conditionTrue();
+	return mySystemManager->oldConditionTrue();
 }
 
 bool myCondition11(){
@@ -99,9 +125,9 @@ bool myCondition12(){
 }
 
 bool myCondition13(){
-	return mySystemManager->conditionTrue();
+	return mySystemManager->oldConditionTrue();
 }
 
 bool myCondition20(){
-	return mySystemManager->conditionTrue();
+	return mySystemManager->oldConditionTrue();
 }

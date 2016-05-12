@@ -3,14 +3,16 @@
 #include "stateMachine.h"
 #include "keyboard.h"
 #include "myFunctions.h"
-#include "hw_functions/hwFunc.h"
-#include "hw_functions/disp.h"
-#include "hw_functions/FHV.h"
 #include <sysLib.h>
 #include <ioLib.h>
 
+extern "C" {
+#include "hw_functions/hwFunc.h"
+}
+
 int n, m;
 bool localMode;
+char keyVal;
 char newKeyVal;
 StateMachine * myStateMachine;
 Keyboard * myKeyboard;
@@ -20,6 +22,8 @@ SystemManager :: SystemManager() {
 	// The maximum size of the table is defined in stateTable.h:
 	// MAXDIA = 9, MAXLINES = 66
 	// Should these be exceeded, please correct!
+
+	initHardware (0);
 
 	tab[0][0] = new TableEntry ("ChainModeIdle","ChainModeIdle","keyPressed",0,noAction,noRelevantKey);
 	tab[0][1] = new TableEntry ("ChainModeIdle","LocalModeIdle","keyPressed",0,setLocalModeTrue,keyB);
@@ -39,23 +43,23 @@ SystemManager :: SystemManager() {
 	tab[1][4] = new TableEntry ("MotorProfile","LocalModeIdle","ProfileTimer",50,myAction13,myCondition13);
 
 	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,evaluateKeyboard,conditionTrue);
-	tab[2][0] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,noAction,myCondition20);
+	tab[2][1] = new TableEntry ("KeyboardIdle","KeyboardIdle","KeyboardTimer",50,noAction,myCondition20);
 
 	// Initialize timer names for all diagrams
 	// Timer names are always Timer followed by the diagram number
-	timerNames[0] = "Timer0";
+	timerNames[0] = "ProfileTimer";
 	timerNames[1] = "Timer1";
 	timerNames[2] = "KeyboardTimer";
 
 	// Initialize line numbers for all diagrams
-	lines[0] = 3;
-	lines[1] = 4;
-	lines[2] = 1;
+	lines[0] = 9;
+	lines[1] = 5;
+	lines[2] = 2;
 
 	// Initialize first state for all diagrams
-	actualState[0] = "StateA";
-	actualState[1] = "StateC";
-	actualState[2] = "StateK";
+	actualState[0] = "ChainModeIdle";
+	actualState[1] = "LocalModeIdle";
+	actualState[2] = "KeyboardIdle";
 	
 	// Set the actual number of diagrams
 	diagrams = 3;
@@ -68,7 +72,8 @@ SystemManager :: SystemManager() {
 
 	// Start timer for each diagram which needs one in the first state!
 	// In my case these are diagram 0 and 2
-	myStateMachine->diaTimerTable[0]->startTimer(tab[0][0]->eventTime);
+	//myStateMachine->diaTimerTable[0]->startTimer(tab[0][4]->eventTime);
+	//myStateMachine->diaTimerTable[1]->startTimer(tab[1][1]->eventTime);
 	myStateMachine->diaTimerTable[2]->startTimer(tab[2][0]->eventTime);
 
 	// Initial actions can be done here, if needed!
@@ -82,27 +87,45 @@ SystemManager :: ~SystemManager() {
 	return;
 }
 
-void SystemManager :: evaluateKeyboard(){
+//actions:
+
+void SystemManager :: myEvaluateKeyboard(){
 	// read Keyboard; if Keyboard value is other than before make the following bzw generell gedrückt:
-	char keyVal = getKey(void);
-	if (keyVal == 0x0) {
-			break;
+	char newKeyVal = getKey();
+	if (newKeyVal == 0x0) {
+		//do nuttin
 	}
-	else
-		printf(" A key has been pressed\n\r");
+	else{
+		keyVal = newKeyVal;
+		printf(" A key has been pressed: %c \n\r", keyVal);
 		myStateMachine->sendEvent("keyPressed");
+	}
 	return;
+
 }
 
-void SystemManager :: noAction(){
+void SystemManager :: myNoAction(){
 	printf("ich bin faul\n\r"); 
 	//myStateMachine->sendEvent("Trigg1");
 	return;
 }
 
-void SystemManager :: setLocalModeTrue(){
+void SystemManager :: mySetLocalModeTrue(){
 	printf(" Transition to local Mode because of Key B pressed\n\r"); 
 	localMode = true;
+	return;
+}
+
+void SystemManager :: myStartTransfer(){
+	printf(" Transition to TransferfromLeft because of Key A pressed\n\r"); 
+	//start motor; sendReady
+	return;
+}
+
+
+void SystemManager :: action02(){
+	printf(" StateC -> Transition10 -> StateD\n\r"); 
+	m = 0;
 	return;
 }
 
@@ -134,38 +157,37 @@ void SystemManager :: action20(){
 	return;
 }
 
-bool SystemManager :: conditionTrue(){
+//conditions:
+
+bool SystemManager :: myConditionTrue(){
 	return TRUE;
 }
 
-bool SystemManager :: noRelevantKey(){
-	if (keyVal =! ("B" || "A") ) {
-		printf("nicht zulässige Eingabe\n\r");
+bool SystemManager :: myNoRelevantKey(){
+	
+	if ( keyVal == ('B' || 'A') ) {
+		printf("relevantKeyPressed\n\r");
+		return FALSE;
+	}
+	else return TRUE;
+}
+
+bool SystemManager :: myKeyB(){
+	if (keyVal =='B') { 
 		return TRUE;
 	}
 	else return FALSE;
 }
 
-bool SystemManager :: keyB(){
-	if (keyVal == "B") { 
-		newKeyVal = false;
+bool SystemManager :: myKeyA(){
+	if (keyVal == 'A') { 
 		return TRUE;
 	}
 	else return FALSE;
 }
 
-bool SystemManager :: keyA(){
-	if (keyVal == "A") { 
-		newKeyVal = false;
-		return TRUE;
-	}
-	else return FALSE;
-}
 
-bool SystemManager :: requestTrue(){
-	if (new) return TRUE;
-	else return FALSE;
-}
+
 
 bool SystemManager :: condition12(){
 	if (m >= 4) return TRUE;
